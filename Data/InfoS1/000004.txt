@@ -1,5 +1,18 @@
-Tag	Value
-Name	AA
-ID	BE010
-Age	66
-Gender	M
+PatientInfo|Value
+Name|John
+ID|BE010
+DoB|12/01/1951
+Age|66
+Gender|M
+ImageInfo|Value
+Part|Lung
+Manufacturer|Philips
+Date|12/01/2017
+Diagnosis|Value
+Description |Sarcoidosis, size 2cm*2cm
+History|1cm*1cm(12/01/2016)
+PhysicianInfo|Value
+Name|Emma
+Hospital|Johns Hopkins Hospital
+ID|BE010
+Gender|F
