@@ -18,7 +18,7 @@ S = regionprops(L, 'Area');
 MaskImg = ismember(L, find([S.Area] >= 800 & [S.Area] <= 100000));
 %fill lung
 MaskImg = imfill(MaskImg,'holes');
-SE = strel('square',35)
+SE = strel('square',35);
 MaskImg = imclose(MaskImg,SE);
 figure;imshow(MaskImg,[]);
 
