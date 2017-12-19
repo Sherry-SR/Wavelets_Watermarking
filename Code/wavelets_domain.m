@@ -1,8 +1,8 @@
 clc;
 clear;
 close all;
-RawFilename = '../Data/CTS1/000004.dcm';
-InfoDataName = '../Data/InfoS1/000004.txt';
+RawFilename = '../Data/CTS1/000075.dcm';
+InfoDataName = '../Data/InfoS1/000075.txt';
 fileID = fopen(InfoDataName,'r');
 WM = textscan(fileID,'%s %s','Delimiter','|');
 fclose(fileID);

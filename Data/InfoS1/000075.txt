@@ -9,7 +9,7 @@ Part|Lung
 Manufacturer|Philips
 Date|12/01/2017
 Diagnosis|Value
-Description |Sarcoidosis, size 2cm*2cm
+Description|Sarcoidosis, size 2cm*2cm
 History|1cm*1cm(12/01/2016)
 PhysicianInfo|Value
 Name|Emma

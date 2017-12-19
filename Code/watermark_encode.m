@@ -9,7 +9,8 @@ for i = 1:length(WM{1})
             if mod(IMAGE(pos_shift+bin_len*(j-1)+k),2) ~= str2num(tag(j,k))
                 if IMAGE(pos_shift+bin_len*(j-1)+k)<0
                     Im(pos_shift+bin_len*(j-1)+k) = IMAGE(pos_shift+bin_len*(j-1)+k) + 1;
-                else Im(pos_shift+bin_len*(j-1)+k) = IMAGE(pos_shift+bin_len*(j-1)+k) - 1;
+                else
+                    Im(pos_shift+bin_len*(j-1)+k) = IMAGE(pos_shift+bin_len*(j-1)+k) - 1;
                 end
             end
         end
@@ -20,7 +21,8 @@ for i = 1:length(WM{1})
             if mod(IMAGE(pos_shift+bin_len*(j-1)+k),2) ~= str2num(value(j,k))
                 if IMAGE(pos_shift+bin_len*(j-1)+k)<0
                     Im(pos_shift+bin_len*(j-1)+k) = IMAGE(pos_shift+bin_len*(j-1)+k) + 1;
-                else Im(pos_shift+bin_len*(j-1)+k) = IMAGE(pos_shift+bin_len*(j-1)+k) - 1;
+                else
+                    Im(pos_shift+bin_len*(j-1)+k) = IMAGE(pos_shift+bin_len*(j-1)+k) - 1;
                 end
             end
         end
