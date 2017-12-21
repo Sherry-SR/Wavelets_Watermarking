@@ -1,8 +1,5 @@
-clc;
-clear;
-close all;
-RawFilename = '../Data/CTS1/000075.dcm';
-IMAGE = double(dicomread(RawFilename));
+function [B, MaskImg] = segmentation(IMAGE)
+
 %get binary image
 ProImg = rescale(IMAGE);
 threshold = graythresh(ProImg);
@@ -20,13 +17,14 @@ MaskImg = ismember(L, find([S.Area] >= 800 & [S.Area] <= 100000));
 MaskImg = imfill(MaskImg,'holes');
 SE = strel('square',35);
 MaskImg = imclose(MaskImg,SE);
-figure;imshow(MaskImg,[]);
+figure;imshow(MaskImg,[]);title('mask image of ROI');
 
 %get boundary
 [B,L] = bwboundaries(MaskImg);
-figure;imshow(IMAGE,[]);
+figure;imshow(IMAGE,[]);title('ROI image by auto-segmentation');
 hold on;
 for i = 1:length(B)
     plot(B{i}(:,2),B{i}(:,1),'r', 'LineWidth', 1);
 end
 hold off;
+end
