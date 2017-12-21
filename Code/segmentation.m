@@ -7,7 +7,7 @@ IMAGE = double(dicomread(RawFilename));
 ProImg = rescale(IMAGE);
 threshold = graythresh(ProImg);
 ProImg = imbinarize(ProImg,threshold);
-figure;imshow(ProImg,[]);
+%figure;imshow(ProImg,[]);
 
 %get lung
 MaskImg = imfill(ProImg,'holes');
