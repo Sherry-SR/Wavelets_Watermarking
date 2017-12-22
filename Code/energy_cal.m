@@ -5,6 +5,6 @@ energy = zeros(length(d),4);
 a_test = zeros(size(a));
 l_test = cell(length()
 for i = 1: length(d)
-% later    
+% for later    
 end
 
