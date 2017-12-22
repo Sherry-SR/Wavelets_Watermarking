@@ -13,6 +13,6 @@ Description|Sarcoidosis, size 2cm*2cm
 History|1cm*1cm(12/01/2016)
 PhysicianInfo|Value
 Name|Emma
-Hospital|Johns Hopkins Hospital
-ID|BE010
+ID|JHH01
 Gender|F
+Hospital|Johns Hopkins Hospital

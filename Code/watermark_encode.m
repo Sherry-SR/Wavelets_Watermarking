@@ -56,7 +56,7 @@ end
 
 
 for i = Ind_end:length(Ind)
-    if (mod(IMAGE(Ind(i)),2) ~= int64(1))
+    if (mod(IMAGE(Ind(i)),2) ~= 0)
         if IMAGE(Ind(i))<0
             Im(Ind(i)) = IMAGE(Ind(i)) + 1;
         else
@@ -69,7 +69,7 @@ Ind_end = dec2bin(Ind_end,16);
 
 code_Ind_end = gf2dec(bchenc(gf(double(Ind_end) - 48),31,16),1,3);
 
-for j = 1:31
+for j = 1:code_len
     if (mod(IMAGE(j),2) ~= int64(code_Ind_end(j)))
         if (IMAGE(j)<0)
             Im(j) = IMAGE(j) + 1;

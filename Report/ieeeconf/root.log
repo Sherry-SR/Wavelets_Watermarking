@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.15)  21 DEC 2017 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.15)  22 DEC 2017 04:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,25 +284,42 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+LaTeX Warning: Reference `WMPos' on page 1 undefined on input line 58.
+
+Package epstopdf Info: Source file: <WMPos.eps>
+(epstopdf)                    date: 2017-12-22 03:55:59
+(epstopdf)                    size: 267935 bytes
+(epstopdf)             Output file: <WMPos-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=WMPos-eps-converted-to.pdf
+ WMPos.eps>
+(epstopdf)             \includegraphics on input line 61.
+runsystem(repstopdf --outfile=WMPos-eps-converted-to.pdf WMPos.eps)...executed 
+safely (allowed).
+
+Package epstopdf Info: Result file: <WMPos-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-22 04:01:35
+(epstopdf)                    size: 83395 bytes.
+<WMPos-eps-converted-to.pdf, id=1, 1124.2pt x 1103.12125pt>
+File: WMPos-eps-converted-to.pdf Graphic file (type pdf)
+<use WMPos-eps-converted-to.pdf>
+Package pdftex.def Info: WMPos-eps-converted-to.pdf  used on input line 61.
+(pdftex.def)             Requested size: 245.71811pt x 241.1052pt.
 Package epstopdf Info: Source file: <ROI.eps>
 (epstopdf)                    date: 2017-12-21 22:28:43
 (epstopdf)                    size: 130313 bytes
 (epstopdf)             Output file: <ROI-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-12-21 22:29:59
+(epstopdf)                    size: 77919 bytes
 (epstopdf)             Command: <repstopdf --outfile=ROI-eps-converted-to.pdf R
 OI.eps>
-(epstopdf)             \includegraphics on input line 63.
-runsystem(repstopdf --outfile=ROI-eps-converted-to.pdf ROI.eps)...executed safe
-ly (allowed).
-
-Package epstopdf Info: Result file: <ROI-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-12-21 22:29:59
-(epstopdf)                    size: 77919 bytes.
-<ROI-eps-converted-to.pdf, id=1, 474.77374pt x 236.885pt>
+(epstopdf)             \includegraphics on input line 73.
+Package epstopdf Info: Output file is already uptodate.
+<ROI-eps-converted-to.pdf, id=2, 474.77374pt x 236.885pt>
 File: ROI-eps-converted-to.pdf Graphic file (type pdf)
 <use ROI-eps-converted-to.pdf>
-Package pdftex.def Info: ROI-eps-converted-to.pdf  used on input line 63.
+Package pdftex.def Info: ROI-eps-converted-to.pdf  used on input line 73.
 (pdftex.def)             Requested size: 245.71811pt x 122.59895pt.
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -321,31 +338,37 @@ Overfull \vbox (336.63313pt too high) has occurred while \output is active []
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
+ <./WMPos-eps-converted-to.pdf> <./ROI-eps-converted-to.pdf>] (./root.aux)
 
- <./ROI-eps-converted-to.pdf>] (./root.aux) ) 
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2723 strings out of 492985
- 40025 string characters out of 6132585
- 101759 words of memory out of 5000000
- 6242 multiletter control sequences out of 15000+600000
- 38400 words of font info for 83 fonts, out of 8000000 for 9000
+ 2730 strings out of 492985
+ 40194 string characters out of 6132585
+ 102759 words of memory out of 5000000
+ 6247 multiletter control sequences out of 15000+600000
+ 39507 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,708b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dis
-t/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/ut
-mb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (1 page, 173209 bytes).
+ 41i,8n,25p,885b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on root.pdf (1 page, 256569 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

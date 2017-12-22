@@ -54,8 +54,18 @@
 
 
 \section{METHODOLOGY}
+\subsection{Watermark embedding}
+The EPR data was split into several blocks for embedding into different sub-bands of wavelet decomposition levels  (Fig. \ref{WMPos}). The energy of the image is mainly concentrated in the high decomposition level while the low frequency. Among sub-bands in the same level, the diagonal ones contain the least energy which means they are more vulnerable to attack. Embedding the watermark in the diagonal detail in the first level can be used in tamper assessing detection of the image. Compared with the diagonal sub-bands, the horizontal and the vertical ones include higher energy, which can guarantee increased robustness when storing EPR data. However, the coarse approximation contains the most crucial information of the original image and would significantly affect the image quality, this sub-bands should avoid any changing in wavelet coefficients.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{WMPos}
+	\caption{Structure of 2-level DWT and illustration of watermarking position}
+	\label{WMPos}
+\end{figure}
+
+
 \subsection{ROI segmentation}
-In our scheme, ROI is defined by the lung area of CT image and we implemented zero watermarking to this part to achieve perfect reconstruction. The automated segmentation of ROI is based on the morphological reconstruction and the connected component analysis. We first applied the hole-filling algorithm to get the rough region of Lung and removed the fake objects (like trachea, noise) according to the area of the connected components ($800 \leq N_{pixels} \leq100000$). The morphological close operation was performed to fill the gaps inside the lung region (Fig. \ref{ROI}). The ROI we acquire from segmentation would be used in specify the bitwise processing region in image.
+In our scheme, ROI is defined by the lung area of CT image and we implemented zero watermarking to this part to achieve perfect reconstruction. The automated segmentation of ROI is based on the morphological reconstruction and the connected component analysis. We first applied the hole-filling algorithm to get the rough region of Lung and removed the false positives (like trachea, noise) according to the area of the connected components ($800 \leq N_{pixels} \leq100000$). The morphological close operation was performed to fill the gaps inside the lung region (Fig. \ref{ROI}). The ROI we acquire from segmentation would be used to specify the bitwise processing region in image based on the equation:
 \[\ I_w = ROI^c \otimes Key\]
 Where $I_w(x,y)\in\{0,1\}$ is an indicator of  the processed position. The corresponding watermarking position of level $L$ in wavelets domain can be determined by just down-sampling by $2^{L-1}$.
 \begin{figure}[htbp]
@@ -64,6 +74,8 @@ Where $I_w(x,y)\in\{0,1\}$ is an indicator of  the processed position. The corre
 	\caption{Illustration of ROI in CT image. left: boundary of ROI. right: mask of lung region}
 	\label{ROI}
 \end{figure}
+
+\subsection{}
 
 \section{RESULTS}
 
@@ -88,7 +100,7 @@ Where $I_w(x,y)\in\{0,1\}$ is an indicator of  the processed position. The corre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{ACKNOWLEDGMENT}
 
-
+SPIE-AAPM Lung CT Challenge
 
 \begin{thebibliography}{99}
  \bibitem{c1} 
