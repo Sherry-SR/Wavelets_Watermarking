@@ -60,11 +60,11 @@ Key2 = Key(2:2:end,2:2:end);
 bin_len = 8;
 code_len = 31;
 pos_shift = 31;
-Q = 32;
-d{1} = double(watermark_encode(int64(2*Q*d{1}),Diagnosis,bin_len,pos_shift,code_len,Key))/2/Q;
-d{2} = double(watermark_encode(int64(2*Q*d{2}),PhysicianInfo,bin_len,pos_shift,code_len,Key2))/2/Q;
-v{1} = double(watermark_encode(int64(2*Q*v{1}),PatientInfo,bin_len,pos_shift,code_len,Key))/2/Q;
-h{1} = double(watermark_encode(int64(2*Q*h{1}),ImageInfo,bin_len,pos_shift,code_len,Key))/2/Q;
+Q = 4;
+d{1} = double(watermark_encode(int64(Q*d{1}),Diagnosis,bin_len,pos_shift,code_len,Key))/Q;
+d{2} = double(watermark_encode(int64(Q*d{2}),PhysicianInfo,bin_len,pos_shift,code_len,Key2))/Q;
+v{1} = double(watermark_encode(int64(Q*v{1}),PatientInfo,bin_len,pos_shift,code_len,Key))/Q;
+h{1} = double(watermark_encode(int64(Q*h{1}),ImageInfo,bin_len,pos_shift,code_len,Key))/Q;
 
 Im_re = ihaart2(a,h,v,d);
 figure;
@@ -96,10 +96,10 @@ tamper = zeros(2,4);
 %% ====================== watermark decode ======================
 
 [a2,h2,v2,d2] = haart2(Im_re,Level);
-[Diagnosis_re,wrong_det(1,1),tamper(1,1)] = watermark_decode(int64(2*Q*d2{1}),bin_len,pos_shift,code_len,Key);
-[PhysicianInfo_re,wrong_det(1,2),tamper(1,2)] = watermark_decode(int64(2*Q*d2{2}),bin_len,pos_shift,code_len,Key2);
-[PatientInfo_re,wrong_det(1,3),tamper(1,3)] = watermark_decode(int64(2*Q*v2{1}),bin_len,pos_shift,code_len,Key);
-[ImageInfo_re,wrong_det(1,4),tamper(1,4)] = watermark_decode(int64(2*Q*h2{1}),bin_len,pos_shift,code_len,Key);
+[Diagnosis_re,wrong_det(1,1),tamper(1,1)] = watermark_decode(int64(Q*d2{1}),bin_len,pos_shift,code_len,Key);
+[PhysicianInfo_re,wrong_det(1,2),tamper(1,2)] = watermark_decode(int64(Q*d2{2}),bin_len,pos_shift,code_len,Key2);
+[PatientInfo_re,wrong_det(1,3),tamper(1,3)] = watermark_decode(int64(Q*v2{1}),bin_len,pos_shift,code_len,Key);
+[ImageInfo_re,wrong_det(1,4),tamper(1,4)] = watermark_decode(int64(Q*h2{1}),bin_len,pos_shift,code_len,Key);
 
 %% ====================== attack testing ======================
 
@@ -118,7 +118,7 @@ PSNR2 = psnr(AttackedImg{Atk_Num},IMAGE,max(max(IMAGE)));
 %% ====================== watermark retrieve ======================
 
 [a3,h3,v3,d3] = haart2(AttackedImg{Atk_Num},Level);
-[Diagnosis_re2,wrong_det(2,1),tamper(2,1)] = watermark_decode(int64(2*Q*d3{1}),bin_len,pos_shift,code_len,Key);
-[PhysicianInfo_re2,wrong_det(2,2),tamper(2,2)] = watermark_decode(int64(2*Q*d3{2}),bin_len,pos_shift,code_len,Key2);
-[PatientInfo_re2,wrong_det(2,3),tamper(2,3)] = watermark_decode(int64(2*Q*v3{1}),bin_len,pos_shift,code_len,Key);
-[ImageInfo_re2,wrong_det(2,4),tamper(2,4)] = watermark_decode(int64(2*Q*h3{1}),bin_len,pos_shift,code_len,Key);
+[Diagnosis_re2,wrong_det(2,1),tamper(2,1)] = watermark_decode(int64(Q*d3{1}),bin_len,pos_shift,code_len,Key);
+[PhysicianInfo_re2,wrong_det(2,2),tamper(2,2)] = watermark_decode(int64(Q*d3{2}),bin_len,pos_shift,code_len,Key2);
+[PatientInfo_re2,wrong_det(2,3),tamper(2,3)] = watermark_decode(int64(Q*v3{1}),bin_len,pos_shift,code_len,Key);
+[ImageInfo_re2,wrong_det(2,4),tamper(2,4)] = watermark_decode(int64(Q*h3{1}),bin_len,pos_shift,code_len,Key);
