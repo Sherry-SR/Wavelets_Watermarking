@@ -62,7 +62,7 @@ The EPR data was split into several blocks for embedding into different sub-band
 	\caption{Structure of 2-level DWT and illustration of watermarking position}
 	\label{WMPos}
 \end{figure}
-
+\\
 
 \subsection{ROI segmentation}
 In our scheme, ROI is defined by the lung area of CT image and we implemented zero watermarking to this part to achieve perfect reconstruction. The automated segmentation of ROI is based on the morphological reconstruction and the connected component analysis. We first applied the hole-filling algorithm to get the rough region of Lung and removed the false positives (like trachea, noise) according to the area of the connected components ($800 \leq N_{pixels} \leq100000$). The morphological close operation was performed to fill the gaps inside the lung region (Fig. \ref{ROI}). The ROI we acquire from segmentation would be used to specify the bitwise processing region in image based on the equation:
@@ -74,8 +74,30 @@ Where $I_w(x,y)\in\{0,1\}$ is an indicator of  the processed position. The corre
 	\caption{Illustration of ROI in CT image. left: boundary of ROI. right: mask of lung region}
 	\label{ROI}
 \end{figure}
+\\
 
-\subsection{}
+\section{PERFORMANCE MEASURES}
+We used four quality measures to evaluate our algorithm: signal-to-noise ratio, mean square error, peak signal-to-noise ratio and tamper assessment factor. Six common kinds of attacks in medical images were applied to test the watermarking performance.\\
+
+\subsection{Signal-to-noise ratio (SNR)}
+The SNR is used to estimate the noise of a signal in decibels. We take the original CT image as the signal and the deference between the processed image and the original one as the noise. SNR calculates the ratio of summed squared magnitude of the signal to that of the noise.
+\[\ SNR(dB) = 10 log_{10} \frac{P_{Im}}{P_n}\]
+Where $P_Im$ means the signal power and $P_n$ means the noise power.\\
+
+\subsection{Mean squared error (MSE)}
+The MSE is a measure of the quality of an estimator, which is defined as the average of the squares of the errors.
+\[\ MSE = \frac{1}{M * N} \sum_{x=1}^{N}\sum_{y=0}^{M}(f(x,y)-Im(x,y))^2\]
+Where $f(x,y)$ means the processed image, $Im(x,y)$ means the original image, $M$ and $N$ mean the width and the height of the image.\\
+
+\subsection{Peak signal-to-noise ratio (PSNR)}
+The PSNR is a ratio between the maximum possible power of a signal and the power of corrupting noise that affects the fidelity of its representation. PSNR is most commonly used in image reconstruction quality measurements, which is an approximation to human perception of image quality. PSNR is most easily defined via the MSE.
+\[\ PSNR(dB) = 10 log_{10} \frac{MaxBits}{MSE}\]
+Where $MaxBits$ stands for the maximum possible pixel value of the image.\\
+
+\subsection{Tamper Assessment Factor (TAF)}
+The TAF is an estimator of the error between the actual embedded watermark and the retrieved water mark. We embedded the known logo image into the diagonal detail of the first wavelet decomposition level and retrieved it. By calculating the deference between the actual watermark and the retrieved one.
+\[\ TAF(w,w') = \frac{1}{M * N} \sum_{x=1}^{N}\sum_{y=0}^{M}(w(x,y)\oplus w'(x,y))\]
+Where $w(x,y)$ means the original watermark, $w'(x,y)$ means the retrieved watermark, $M$ and $N$ mean the width and the height of the watermark image.\\
 
 \section{RESULTS}
 
